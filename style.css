@@ -163,7 +163,7 @@
   margin-top: -1rem;
   padding: 1rem;
   width: calc(100%);
-  height: 60%;
+  height: 50%;
 }
 
 .movie-carousel-title {
@@ -177,6 +177,7 @@
   overflow-x: auto;
   height: 100%;
   scroll-snap-type: x mandatory;
+  align-items: space-between;
 }
 
 .movie-carousel::-webkit-scrollbar {
@@ -187,6 +188,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200px;
 }
 
 .movie-card-image {
@@ -194,7 +196,6 @@
 }
 
 .movie-card-title {
-  max-width: 80%;
   text-align: center;
   word-wrap: normal;
   margin-top: 0.5rem;
@@ -202,9 +203,9 @@
 }
 
 .main-hr {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  opacity: 0.2;
+  opacity: 0.1;
   position: relative;
   left: -2rem;
   width: calc(100% + 4rem);
@@ -213,8 +214,46 @@
 .rr-title {
   width: 100%;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .rr-wrapper {
   width: 100%;
+  max-height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 2rem;
+}
+
+.rr-container {
+  max-height: inherit;
+}
+
+.rr-rating {
+  font-size: 3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.rr-rating-title {
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-left: 1rem;
+}
+
+.rr-description {
+  font-size: 0.8rem;
+  text-align: justify;
+  color: var(--base-button-color);
+}
+
+.rr-date {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.7rem;
+  text-align: end;
+  font-weight: 700;
+  color: var(--base-button-color);
 }
