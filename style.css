@@ -2,8 +2,8 @@
 
 :root {
   --base-color: rgb(36, 36, 36);
-  --button-default-color: rgb(99, 99, 99);
-  --button-hover-color: rgb(161, 161, 161);
+  --base-wrapper-color: rgb(52, 51, 51);
+  --base-button-color: rgb(161, 161, 161);
   --text-default-color: white;
 }
 
@@ -11,19 +11,25 @@
   background-color: var(--base-color);
   font-family: "Nunito Sans";
   color: white;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
   top: 0;
   left: 0;
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
 }
 
 .wrapper {
+  margin-block-start: 1rem;
   padding-inline: 4rem;
+  height: 10%;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .navbar {
@@ -48,12 +54,13 @@
 }
 
 .navbar-logo {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .navbar-logo-title {
   margin-inline-start: 1rem;
   font-size: 2rem;
+  margin-block: 0;
 }
 
 .navbar-link-container {
@@ -69,57 +76,145 @@
   margin-inline-end: 1rem;
   justify-self: flex-end;
   font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .navbar-link:hover {
-  color: var(--button-hover-color);
+  color: var(--base-button-color);
 }
 
 .bottom-wrapper {
-  height: 75vh;
+  display: flex;
+  margin-block: 0;
+  flex-grow: 1;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
-  width: fit-content;
-  border: solid 2px var(--text-default-color);
+  width: 15%;
+  border: solid 2px var(--base-wrapper-color);
   border-radius: 1rem;
   padding: 2rem;
+  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  /* background-color: var(--base-wrapper-color); */
+  color: var(--text-default-color);
+  font-weight: 600;
+  -webkit-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.41);
+  box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.41);
 }
 
 .sidebar-profile {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+  margin-top: -3rem;
 }
 
 .sidebar-name {
   font-size: 2rem;
+  margin-block-start: 0.5rem;
 }
 
 .sidebar-ratings {
   font-size: 1rem;
+  margin-block: 0.25rem;
 }
 
 .sidebar-button {
   outline: none;
   border: none;
-  background: var(--button-default-color);
+  background: var(--text-default-color);
   align-self: center;
   border-radius: 1rem;
   font-size: 1rem;
-  color: var(--text-default-color);
+  font-weight: 700;
+  color: var(--base-color);
   cursor: pointer;
   padding-inline: 1rem;
   padding-block: 0.5rem;
+  margin-block-start: 0.5rem;
 }
 
 .main-content {
-  flex-grow: 1;
-  border: solid 2px var(--text-default-color);
+  border: solid 2px var(--base-wrapper-color);
   border-radius: 1rem;
+  margin-inline-start: 2rem;
   padding: 2rem;
-  margin-inline-start: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75%;
+  width: calc(85% - 11rem);
+  color: var(--text-default-color);
+  font-weight: 600;
+  -webkit-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.41);
+  box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.41);
+}
+
+.movie-carousel-wrapper {
+  margin-top: -1rem;
+  padding: 1rem;
+  width: calc(100%);
+  height: 60%;
+}
+
+.movie-carousel-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.movie-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  height: 100%;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-card-image {
+  height: calc(100% - 4rem);
+}
+
+.movie-card-title {
+  max-width: 80%;
+  text-align: center;
+  word-wrap: normal;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.main-hr {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.2;
+  position: relative;
+  left: -2rem;
+  width: calc(100% + 4rem);
+}
+
+.rr-title {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.rr-wrapper {
+  width: 100%;
 }
